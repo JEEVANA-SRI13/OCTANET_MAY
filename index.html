@@ -1,36 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do list</title>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="clear">
-               <i class="fa fa-refresh"></i>
-            </div>
-            <div id="date"></div>
-        </div>
-        <div class="content">
-            <ul id="list">
-                 <!----
-                  <li class="item">
-                   <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                    <p class="text">Drink Coffee</p>
-                    <i class="fa fa-trash-o de" job="delete" id="0"></i> 
-                  </li> --->
-            </ul>
-        </div>
-        <div class="add-to-do">
-            <i class="fa fa-plus-circle"></i>
-            <input type="text" id="input" placeholder="Add a to-do">
+<html lang= "en">
+    <head>
+        <meta charset="utf-8">
+        <meta equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="styles.css">
+<title>Document</title>
+    </head>
+  <body>
+    <header>
+        <div class="navbar">
+        <div class="logo"><a href="#">Travel.co</a></div>
+        <ul class="links">
+            <li><a href="home">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="offers">Offers</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="contacts">Contacts</a></li>
+        </ul>
+
+    <a href="#" class="action_btn">Get Started</a>
+    <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
         </div>
     </div>
-    <script src="node.js"></script>
-</body>
+
+    <div class="dropdown_menu ">
+        <li><a href="home">Home</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="offers">Offers</a></li>
+        <li><a href="services">Services</a></li>
+        <li><a href="contacts">Contacts</a></li>
+        <li><a href="#" class="action_btn">Get Started</a></li>
+    </div>
+</header>
+
+<main>
+    <section id="home">
+      <h1>Welcome</h1>
+      <p>
+        Best traveling experience with expertise knowledge and guidlines 
+      </p>
+    </section>
+</main>
+
+<script>
+    const toggleBtn= document.querySelector('.toggle_btn')
+    const toggleBtnIcon= document.querySelector('.toggle_btn i')
+    const dropdownMenu= document.querySelector('.dropdown_menu')
+
+   toggleBtn.onclick = function () {
+    dropdownMenu.classList.toggle('open')
+    const isOpen = dropdownMenu.classList.contains('open')
+
+    toggleBtnIcon.classList = isOpen
+    ? 'fa-solid fa-xmark'
+    : 'fa-solid fa-bars'
+   }
+</script>
+  </body>
 </html>
